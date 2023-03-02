@@ -1,0 +1,15 @@
+{% extends 'website/base.html' %} 
+{% block content %}
+<div class="consult">
+    <h1>Consulter vos estimations !</h1>
+    <h2>Vos biens déjà estimés chez nous :</h2>
+    {% for prediction in predictions %}
+   <div class = "prediction">
+        <p>Adresse : {{ prediction.address }}</p>
+        <p>{{ prediction.m2_living }} m2 {{ prediction.bedrooms }} chambres</p>
+        <p>Prix estimé : {{ prediction.predicted_price }} $</p>
+        <a href="{% url 'prediction-detail' prediction.id %}">Accéder au détail</a>
+    </div>
+   {% endfor %}
+</div>
+{% endblock content %}

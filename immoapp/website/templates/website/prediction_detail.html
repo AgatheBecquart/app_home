@@ -1,0 +1,28 @@
+{% extends 'website/base.html' %} 
+{% block content %}
+<div class="detail">
+  <h1>Les caractéristiques de mon bien :</h1>
+  <div class = "detailpredicition">
+    <ul>
+      <li>Nombre de chambres : {{ prediction.bedrooms }}</li>
+      <li>Nombre de salles de bain : {{ prediction.bathrooms }}</li>
+      <li>Surface habitable : {{ prediction.m2_living }} m²</li>
+      <li>Surface du terrain : {{ prediction.m2_lot }} m²</li>
+      <li>Nombre d'étages : {{ prediction.floors }}</li>
+      <li>Vue mer : {{ prediction.waterfront }}</li>
+      <li>Note de la vue : {{ prediction.view }}</li>
+      <li>Condition : {{ prediction.condition }}</li>
+      <li>Note de qualité : {{ prediction.grade }}</li>
+      <li>Surface habitable à l'étage : {{ prediction.m2_above }} m²</li>
+      <li>Année de construction : {{ prediction.get_yr_built_display }}</li>
+      <li>Code Postal : {{ prediction.zipcode }}</li>
+      <li>Sous-sol : {{ prediction.get_has_basement_display }}</li>
+      <li>Rénové : {{ prediction.get_was_renovated_display }}</li>
+      <li>Prix prédit : {{ prediction.predicted_price }} $</li>
+    </ul>
+    <a href="{% url 'prediction-change' prediction.id %}">Modifier les caractèristiques de mon bien</a>
+    <a href="{% url 'prediction-delete' prediction.id %}">Supprimer cette estimation</a>
+  </div>
+    
+</div>
+{% endblock content %}

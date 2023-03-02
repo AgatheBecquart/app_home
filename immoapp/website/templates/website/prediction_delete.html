@@ -1,0 +1,14 @@
+{% extends 'website/base.html' %}
+{% block content %}
+<div class="delete">
+    <h1>Supprimer l'estimation de mon bien</h1>
+
+    <h2>Etes-vous sûr de vouloir supprimer l'estimation ?</h2>
+
+    <form action="" method="post" class="formdelete">
+    {% csrf_token %}
+    <input type="submit" value="Supprimer">
+    </form>
+</div>
+
+{% endblock %}

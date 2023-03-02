@@ -1,0 +1,14 @@
+{% extends 'website/base.html' %} 
+{% block content %}
+<div class='contact'>
+    <h1>Contactez-moi</h1>
+    <h2>Je suis là pour répondre à toutes vos questions sur le coaching.</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Envoyer">
+    </form>
+</div>
+
+
+{% endblock %}

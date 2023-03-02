@@ -1,0 +1,19 @@
+{% extends 'website/base.html' %}
+{% block content %}
+<div class="estimate">
+  <h1>Prédiction du prix d'une maison</h1>
+  <form method="post">
+  {% if prediction %}
+    <h3>Le prix prédit est : {{ prediction }} $ </h3>
+  {% endif %}
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="action" value="predict">
+    <button type="submit" name="action_type" value="predict">Prédire le prix</button>
+    <input type="hidden" name="action" value="save_prediction">
+    <button type="submit" name="action_type" value="save_prediction">Enregistrer</button>
+  </form>
+  
+</div>
+
+{% endblock %}

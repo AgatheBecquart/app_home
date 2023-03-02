@@ -1,0 +1,13 @@
+{% extends 'website/base.html' %}
+{% block content %}
+<div class="change">
+  <h1>Modifier les caractéristiques de mon bien</h1>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Envoyer">
+  </form>
+</div>
+
+{% endblock %}
